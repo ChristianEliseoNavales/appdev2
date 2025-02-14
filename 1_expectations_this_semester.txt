@@ -1,0 +1,28 @@
+//Introduction
+
+	Hi! If you still don't know, my name is Christian Eliseo N. Isip. I love and hate programming. I love it when it works and hate it when it doesn't. Kidding! 
+
+	I have basic knowledge and experience in HTML, CSS, Java, Javascript, and Python. During our last semester, I also encountered other technologies and platforms such as React, Vite, and Firebase. We also utilized Node.js in our projects in our APPDEV1 course. These things might make me look like an expert, but I consider myself barely good at either front-end or back-end development. I still have room for improvement and am interested in continuing this journey.
+
+
+//Course Expectations
+
+	In our APPDEV2 course, I want to achieve a more well-rounded version of myself as a developer in our group project, focusing on back-end development. However, I am still eager to learn more about which tools and sites to use or visit to enhance my UI and UX knowledge and skills. It is still essential because it will be the face of our project.
+
+	Back-end development gives your project's front-end design life and purpose. Without it, your system would be an empty shell. In our APPDEV1 course, we utilized BaaS or Back-end as a Service to handle the behind-the-scenes of our project. It made it easier for us developers to deliver our project. However, we cannot rely on it in the long run. To achieve the goal of being a better developer, we must understand how the server-side works.a
+
+	I look forward to learning about MongoDB specifically since most projects require a database to handle our data. It would be greatly beneficial for us 3rd Year students, especially since we are next in line in creating the next generation of capstone projects for our school. The knowledge we can gain from the course would be valuable for those planning to pursue careers such as web developers, software developers, UI Designers, etc.
+
+//Challenges and Areas for Improvement
+
+	I find back-end development to be quite challenging. I often struggle with understanding code syntax and writing it independently without the need to search for help or use tools. My goal isn’t to memorize everything. Instead, I want to gain a better and quicker understanding so I can participate confidently in discussions without feeling left behind. I do review and rewatch our class sessions to compensate for this issue. However, it also takes more time than I can afford as of my current state as a student with multiple duties in our institution.
+
+	There is no better way to overcome these challenges than to engage in advanced studying and research. The class vice president and I plan to implement online meetings to address the specific needs and concerns of each role. The purpose of these meetings is to provide an opportunity for collaboration among all participants with the same role. This concept can be applied broadly within our course. Any student who understands the discussion can help share their knowledge with those who may have struggled to keep up. We can also reach out to our seniors to ask for tips and tricks.
+
+//Expectations from the Instructor
+
+	With my experience, I have no further expectations from you as our instructor. I believe that your teaching style fits my standards and preferences. Thank you for taking the extra time to prepare recorded tutorial videos for us to review and follow. I appreciate the instantaneous feedback whenever a student asks a question during a discussion. I also admire how you filter and pick only the practical parts of our course that you see fit with the current trends in the industry, so we will remain updated in the field once we graduate, God willing. I hope you will not lose motivation or hope in teaching us even if we are hard-headed sometimes. 
+
+//Final Thoughts
+
+	I hope that we will have another successful and meaningful semester and that we will develop a more diverse set of skills that we can use to move on to the next level. I am both excited and scared of what's to come, but I am glad to face it with all of you. Thanks be to God.
