@@ -1,4 +1,5 @@
 const express = require('express');
+const connectDB = require('./config/db');
 require('dotenv').config();
 const app = express();
 const bookRoutes = require('./routes/bookRoutes');
@@ -6,6 +7,9 @@ const bookRoutes = require('./routes/bookRoutes');
 app.use(express.json()); //middleware to allow JSON format
 app.use(express.urlencoded({ extended: true })); //middleware to allow form encoded data
 const PORT = process.env.PORT || 3000;
+
+// Connect to MongoDB
+connectDB();
 
 // Routes
 app.use('/', bookRoutes);

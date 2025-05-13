@@ -1,90 +1,64 @@
-const fs = require('fs');
-const path = require('path');
-const filePath = path.join(__dirname, '../books.json');
-
-// Read books from books.json file
-const readBooks = () => {
-  const data = fs.readFileSync(filePath, 'utf-8');
-  return JSON.parse(data);
-};
-
-// Write books to books.json file
-const writeBooks = (books) => {
-  fs.writeFile(filePath, JSON.stringify(books, null, 2), 'utf-8', (err) => {
-    if (err) throw err;
-  });
-};
+const Book = require('../models/bookSchema');
 
 // Welcome message
 const welcome = (req, res) => {
-  res.send("Simple Book API using Node.js and Express");
+  res.send("Simple Book API using Node.js, Express, and MongoDB");
 };
 
 // GET /api/books
-const getAllBooks = (req, res) => {
-  const books = readBooks();
-  res.json(books);
+const getAllBooks = async (req, res) => {
+  try {
+    const books = await Book.find();
+    res.json(books);
+  } catch (err) {
+    res.status(500).send("Server error");
+  }
 };
 
 // GET /api/books/:id
-const getBookById = (req, res) => {
-  const books = readBooks();
-  const id = parseInt(req.params.id);
-  const book = books.find(book => book.id === id);
-
-  if (!book) {
-    return res.status(404).send("Book not found");
+const getBookById = async (req, res) => {
+  try {
+    const book = await Book.findById(req.params.id);
+    if (!book) return res.status(404).send("Book not found");
+    res.json(book);
+  } catch (err) {
+    res.status(400).send("Invalid ID format");
   }
-
-  res.json(book);
 };
 
 // POST /api/books
-const addBook = (req, res) => {
-  const { title, author } = req.body;
-  const books = readBooks();
-
-  const newBook = {
-    id: books.length + 1,
-    title,
-    author
-  };
-
-  books.push(newBook);
-  writeBooks(books);
-  res.status(201).json(newBook);
+const addBook = async (req, res) => {
+  try {
+    const { title, author } = req.body;
+    const newBook = new Book({ title, author });
+    await newBook.save();
+    res.status(201).json(newBook);
+  } catch (err) {
+    res.status(400).send("Failed to add book");
+  }
 };
 
 // PATCH /api/books/:id
-const updateBook = (req, res) => {
-  const books = readBooks();
-  const id = parseInt(req.params.id);
-  const book = books.find(book => book.id === id);
-
-  if (!book) {
-    return res.status(404).send("Book not found");
+const updateBook = async (req, res) => {
+  try {
+    const updates = req.body;
+    const book = await Book.findByIdAndUpdate(req.params.id, updates, { new: true });
+    if (!book) return res.status(404).send("Book not found");
+    res.json(book);
+  } catch (err) {
+    res.status(400).send("Invalid ID or update data");
   }
-
-  if (req.body.title) book.title = req.body.title;
-  if (req.body.author) book.author = req.body.author;
-
-  writeBooks(books);
-  res.json(book);
 };
 
 // DELETE /api/books/:id
-const deleteBook = (req, res) => {
-  const books = readBooks();
-  const id = parseInt(req.params.id);
-  const index = books.findIndex(book => book.id === id);
-
-  if (index === -1) {
-    return res.status(404).send("Book not found");
+const deleteBook = async (req, res) => {
+  try {
+    const book = await Book.findByIdAndDelete(req.params.id);
+    if (!book) return res.status(404).send("Book not found");
+    res.send(`Book ID ${req.params.id} has been deleted`);
+  } catch (err) {
+    res.status(400).send("Invalid ID format");
   }
-
-  books.splice(index, 1);
-  writeBooks(books);
-  res.send(`Book ID ${id} has been deleted`);
 };
 
 module.exports = {
