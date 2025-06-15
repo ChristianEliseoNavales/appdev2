@@ -1,0 +1,55 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    title New Book Added
+    style.
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+      }
+      .email-container {
+        background-color: #ffffff;
+        max-width: 600px;
+        margin: 0 auto;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #2c3e50;
+        text-align: center;
+        font-size: 24px;
+      }
+      .book-details {
+        margin-top: 20px;
+        font-size: 16px;
+        color: #333;
+      }
+      .book-details strong {
+        color: #000;
+      }
+      .footer {
+        margin-top: 30px;
+        font-size: 14px;
+        color: #888;
+        text-align: center;
+      }
+  body
+    .email-container
+      h1 📚 New Book Added
+      .book-details
+        p A new book has been added to the system.
+        p
+          strong Title: 
+          | #{title}
+        p
+          strong Author: 
+          | #{author}
+        p
+          strong Year Published: 
+          | #{year}
+      .footer
+        p This is an automated notification from your Book API.
